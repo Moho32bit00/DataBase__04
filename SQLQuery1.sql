@@ -34,7 +34,7 @@
 --GO
 --
 
---1 UPDATE OPERATIONS :
+--2 UPDATE OPERATIONS :
 --update Products
 --set UntiPrice = UntiPrice * 1.1
 --where UntiPrice < 100 ;
@@ -59,3 +59,19 @@ Values (2 , 'mohamed Ahmed' , 'american' , 2354 , '2009-04-02'),
 (3 , 'noor mohamed' , 'japanese' , 2834 , '2005-03-08'),
 (4 , 'alaa elsayd' , 'sweden' , 4334 , '2002-09-01'),
 (5 , 'abdo ismail' , 'canadien' , 6734 , '2001-03-02')
+
+
+--2 UPDATE OPERATIONS :
+update Room 
+set DailyRate = DailyRate * 1.15
+where RoomType = 'suite' ;
+Go 
+
+
+update Reservations 
+set ReservationStatus = case 
+	when Checkout < GETDATE() then 'Completed'
+	when Checkin > GETDATE() then 'Upcoming'
+	else 'Active' 
+	end ;
+Go
