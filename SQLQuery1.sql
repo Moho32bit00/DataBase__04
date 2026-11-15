@@ -1,6 +1,5 @@
-USE Retail_Store ;
-Go 
-
+--USE Retail_Store ;
+--Go 
 --1 INSERT OPERATIONS :
 --insert into dbo.Customer 
 --Values (1 , 'ahmed' , 0120129097 ,'ahmed@gmail.com','str 2 ' , '2022-10-02');
@@ -36,14 +35,27 @@ Go
 --
 
 --1 UPDATE OPERATIONS :
-update Products
-set UntiPrice = UntiPrice * 1.1
-where UntiPrice < 100 ;
-Go
+--update Products
+--set UntiPrice = UntiPrice * 1.1
+--where UntiPrice < 100 ;
+--Go
 
-update Orders 
-set status = case  
-    when  TotalAmount  > 5000 then 'premuim'
-    else  'Standard'
-    end ;
-Go
+--update Orders 
+--set status = case  
+--    when  TotalAmount  > 5000 then 'premuim'
+--    else  'Standard'
+--    end ;
+--Go
+
+ USE [Hotel] ;
+ Go 
+
+--1 INSERT OPERATIONS :
+insert into Guest 
+Values (1 , 'mohamed ehab' , 'egyptian' , 2334 , '2007-01-06')
+
+insert into Guest 
+Values (2 , 'mohamed Ahmed' , 'american' , 2354 , '2009-04-02'),
+(3 , 'noor mohamed' , 'japanese' , 2834 , '2005-03-08'),
+(4 , 'alaa elsayd' , 'sweden' , 4334 , '2002-09-01'),
+(5 , 'abdo ismail' , 'canadien' , 6734 , '2001-03-02')
